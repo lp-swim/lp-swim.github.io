@@ -1,0 +1,36 @@
+name: IndexNow Ping
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'index.html'
+      - 'style.css'
+      - 'app.js'
+      - 'ai-worker.js'
+      - 'sw.js'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping-indexnow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Send ping to IndexNow API
+        run: |
+          curl -X POST https://api.indexnow.org/indexnow \
+          -sS --fail-with-body \
+          --retry 3 --retry-delay 2 \
+          -H "Content-Type: application/json; charset=utf-8" \
+          -d '{
+            "host": "lp-swim.github.io",
+            "key": "5b067c6b522b427888b5e69118dbe741",
+            "keyLocation": "https://lp-swim.github.io/5b067c6b522b427888b5e69118dbe741.txt",
+            "urlList": [
+              "https://lp-swim.github.io/"
+            ]
+          }'
