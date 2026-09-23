@@ -1,5 +1,5 @@
 "use strict";
-const CACHE_VERSION = "v7.7.7",
+const CACHE_VERSION = "v5.4.2",
   CACHE_NAME = `lp-swim-cache-${CACHE_VERSION}`,
   ASSETS_TO_CACHE = ["./", "./index.html", "./style.css", "./app.js", "./ai-worker.js", "./img/preisliste.svg", "./img/preisliste.pdf", "./favicon.svg", "./app-icon.png", "./apple-touch-icon.webp", "./img/inhaber-lukas-prehn.webp", "./fonts/poppins-v24-latin-300.woff2", "./fonts/poppins-v24-latin-regular.woff2", "./fonts/poppins-v24-latin-500.woff2", "./fonts/poppins-v24-latin-600.woff2", "./fonts/poppins-v24-latin-700.woff2", "./fonts/playfair-display-v40-latin-regular.woff2", "./fonts/playfair-display-v40-latin-italic.woff2", "./fonts/playfair-display-v40-latin-700italic.woff2", "./5b067c6b522b427888b5e69118dbe741.txt"];
 self.addEventListener("install", e => {
