@@ -13,13 +13,8 @@
     <link rel="icon" href="https://lp-swim.github.io/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.webp">
     <link rel="preload" as="font" type="font/woff2" href="./fonts/poppins-v24-latin-regular.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="./fonts/poppins-v24-latin-700.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="./fonts/playfair-display-v40-latin-regular.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="./fonts/playfair-display-v40-latin-italic.woff2" crossorigin>
     <link rel="preload" as="image" href="./img/inhaber-lukas-prehn.webp" type="image/webp" fetchpriority="high">
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <link rel="preconnect" href="https://calendly.com" crossorigin>
     <meta name="description" content="Schwimmunterricht in Viernheim – Einzel- und Duo-Unterricht für Groß & Klein. Vom ersten Wasserkontakt bis zur perfekten Technik. Jetzt Kurs buchen!">
     <meta name="author" content="Lukas Prehn">
     <meta name="application-name" content="LP-SWIM">
@@ -42,6 +37,39 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="stylesheet" href="./style.css?v=2.1.1">
     <link rel="manifest" href="./manifest.json">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://lp-swim.github.io/#website",
+          "url": "https://lp-swim.github.io/",
+          "name": "LP-SWIM",
+          "publisher": {
+            "@id": "https://lp-swim.github.io/#localbusiness"
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://lp-swim.github.io/#localbusiness",
+          "name": "LP-SWIM",
+          "image": "https://lp-swim.github.io/img/inhaber-lukas-prehn.webp",
+          "description": "Privater Schwimmunterricht in Viernheim.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Viernheim",
+            "addressCountry": "DE"
+          },
+          "founder": {
+            "@type": "Person",
+            "name": "Lukas Prehn"
+          },
+          "url": "https://lp-swim.github.io/"
+        }
+      ]
+    }
+    </script>
   </head>
 
   <body class="antialiased pb-0 selection:bg-sky-200 selection:text-sky-900 bg-[#fbfaf8] text-slate-600 font-sans"><svg class="hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -214,7 +242,7 @@
           </a>
         </div>
         <div class="stagger-2 flex-1 relative w-full">
-          <div class="w-full h-full max-w-lg mx-auto md:ml-auto md:mr-0 relative hero-img-wrapper"><img src="./img/inhaber-lukas-prehn.webp" alt="Lukas Prehn" class="w-full h-full object-cover" fetchpriority="high">
+          <div class="w-full h-full max-w-lg mx-auto md:ml-auto md:mr-0 relative hero-img-wrapper"><img src="./img/inhaber-lukas-prehn.webp" alt="Lukas Prehn" width="600" height="800" decoding="async" class="w-full h-full object-cover" fetchpriority="high">
             <div class="absolute bottom-12 sm:bottom-16 left-0 right-0 flex flex-nowrap justify-center items-center gap-1.5 sm:gap-4 text-[8.5px] min-[375px]:text-[9.5px] sm:text-xs font-semibold text-slate-900 text-center tracking-wide pointer-events-none whitespace-nowrap px-2 z-20"><span>Staatl. anerkannt FAB</span><span>|</span><span>Gründer</span><span>|</span><span>Geprüft (DSLV)</span></div>
           </div>
         </div>
@@ -605,7 +633,7 @@
             </svg></a><button type="button" data-close-modal="preisModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-200 rounded-md transition-colors outline-none" aria-label="Fenster schließen"><svg aria-hidden="true" class="w-5 h-5">
               <use href="#icon-close"></use>
             </svg></button></div>
-        <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-6 sm:p-10 h-full"><img src="./img/preisliste.svg" width="1200" height="1600" alt="LP-SWIM Preisübersicht Dokument" class="w-full h-full object-contain drop-shadow-md rounded-xl" fetchpriority="high"></div>
+        <div class="flex-grow overflow-hidden bg-brand-50/30 flex items-center justify-center p-6 sm:p-10 h-full"><img src="./img/preisliste.svg" width="1200" height="1600" alt="LP-SWIM Preisübersicht Dokument" class="w-full h-full object-contain drop-shadow-md rounded-xl" loading="lazy" decoding="async"></div>
       </div>
     </dialog>
     <dialog id="datenschutzModal" aria-modal="true" aria-labelledby="datenschutzTitle" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-[42rem] max-h-[85vh] p-0 m-auto outline-none" hidden>
