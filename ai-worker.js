@@ -155,6 +155,7 @@ self.onmessage = e => {
     const eStr = r.toLowerCase().trim();
     const nArr = [...new Set(clean(eStr))];
     const norm = s => s.replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss");
+    const stem = w => w.replace(/(?:e|em|en|er|es|st|s)$/, "");
     
     const iList = CATEGORIES.map(cat => {
       let catScore = 0;
@@ -165,13 +166,17 @@ self.onmessage = e => {
       
       nArr.forEach(userWord => {
         const normUser = norm(userWord);
+        const stemmedUser = stem(normUser);
         let bestWordScore = 0;
         
         cat.keywords.forEach(kw => {
           const normKw = norm(kw);
+          const stemmedKw = stem(normKw);
           
-          if (normUser === normKw) {
+          if (normUser === normKw || stemmedUser === stemmedKw) {
             bestWordScore = Math.max(bestWordScore, 10);
+          } else if ((normUser.length >= 5 && normKw.length >= 4 && normUser.includes(normKw)) || (normKw.length >= 5 && normUser.length >= 4 && normKw.includes(normUser))) {
+            bestWordScore = Math.max(bestWordScore, 7);
           } else {
             const threshold = normKw.length <= 3 ? 0 : Math.floor(normKw.length * 0.25);
             
@@ -196,11 +201,7 @@ self.onmessage = e => {
       const topScore = iList[0].score;
       
       if (iList.length > 1 && (topScore - iList[1].score < 5)) {
-        if (topScore < 10) {
-           t = "Ich bin mir nicht ganz sicher – meinten Sie vielleicht <b>" + iList[0].title + "</b> oder <b>" + iList[1].title + "</b>? Formulieren Sie Ihre Frage gerne etwas anders.";
-        } else {
-           t = "Wir sind uns nicht ganz sicher, auf welches Thema Sie hinausmöchten. Hier sind zwei passende Antworten für Sie:<br><br><b>Zum Thema " + iList[0].title + "</b><br>" + iList[0].text + "<br><br><b>Zum Thema " + iList[1].title + "</b><br>" + iList[1].text;
-        }
+        t = "Wir sind uns nicht ganz sicher. Welches dieser Themen passt besser?<br><br><div class='flex flex-wrap gap-2 mt-2'><button type='button' class='chat-suggestion px-4 py-2.5 bg-white border border-brand-300 text-brand-800 rounded-full text-xs font-semibold hover:bg-brand-50 active:scale-95 transition-all shadow-sm outline-none cursor-pointer'>" + iList[0].title + "</button><button type='button' class='chat-suggestion px-4 py-2.5 bg-white border border-brand-300 text-brand-800 rounded-full text-xs font-semibold hover:bg-brand-50 active:scale-95 transition-all shadow-sm outline-none cursor-pointer'>" + iList[1].title + "</button></div>";
       } else {
         t = iList[0].text;
       }
@@ -208,7 +209,7 @@ self.onmessage = e => {
     
     setTimeout(() => {
       self.postMessage({ type: "REPLY", text: t });
-    }, 1000 + 1000 * Math.random());
+    }, 400 + 300 * Math.random());
     
   } catch (e) {
     self.postMessage({ type: "ERROR", text: e.message });
