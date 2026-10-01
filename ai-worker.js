@@ -102,7 +102,7 @@ const CATEGORIES = [{
     title: "Das Team & Qualifikation",
     regex: /wer unterrichtet|wer ist der trainer|wer bringt es bei|wer steckt hinter|wofür steht|wer ist lukas|welche qualifikation|wie heißt der trainer|habt ihr zertifikate|wer führt den kurs durch/i,
     keywords: ["inhaber", "lukas", "prehn", "lpswim", "bedeutung", "wofür", "lehrer", "trainer", "personal", "gründer", "team", "schwimmlehrer", "qualifikation", "ausbilder", "chef", "hintergrund", "fachangestellter", "bäderbetriebe", "zertifizierung"],
-    text: "LP-SWIM steht für Lernen und Perfektionieren. Die Idee zu diesem Konzept entstand aus der täglichen Arbeit des Gründers Lukas Prehn in den Viernheimer Bädern. Er erlebte dort immer wieder, dass klassische Gruppenkurse zwar wunderbar für das soziale Miteinander sind, aber in starren Formaten oft die Zeit für eine individuelle Betreuung fehlt. Zudem mangelt es gerade für Erwachsene häufig an verlässlichen Angeboten. Genau aus dieser Lücke heraus entstand LP-SWIM. Das Konzept bietet einen sicheren und persönlichen Weg ins Wasser, bei dem ungeteilte Aufmerksamkeit und ein Training ohne Leistungsdruck im Mittelpunkt stehen. Diese Qualität ist auch durch den <b>DSLV</b> als unabhängige Stelle <a href='https://schwimmlehrerverband.de/dslv-gepruefte-schwimmschulen' target='_blank' rel='noopener noreferrer'>offiziell geprüft</a>."
+    text: "LP-SWIM steht für Lernen und Perfektionieren. Die Idee zu diesem Konzept entstand aus der täglichen Arbeit im Bäderbetrieb des Gründers Lukas Prehn. Dabei zeigte, dass klassische Gruppenkurse zwar wunderbar für das soziale Miteinander sind, in starren Formaten jedoch oft die Zeit für eine individuelle Betreuung fehlt. Zudem mangelt es gerade für Erwachsene häufig an verlässlichen Angeboten. Genau aus dieser Lücke heraus entstand LP-SWIM. Das Konzept bietet einen sicheren und persönlichen Weg ins Wasser, bei dem ungeteilte Aufmerksamkeit und ein Training ohne Leistungsdruck im Mittelpunkt stehen. Diese Qualität ist auch durch den <b>DSLV</b> als unabhängige Stelle <a href='https://schwimmlehrerverband.de/dslv-gepruefte-schwimmschulen' target='_blank' rel='noopener noreferrer'>offiziell geprüft</a>."
   }, {
     title: "Kontakt & Erreichbarkeit",
     regex: /wie kann ich euch erreichen|telefonnummer|kann ich anrufen|wo finde ich whatsapp|wie kommunizieren wir|über whatsapp schreiben|telefonisch erreichen|handynummer|kontaktformular|schickt ihr eine whatsapp/i,
@@ -112,7 +112,7 @@ const CATEGORIES = [{
     title: "Schwimmabzeichen",
     regex: /seepferdchen|nehmt ihr abzeichen ab|wie bekomme ich bronze|gibt es eine urkunde|rettungsschwimmer|für die polizei trainieren|silberabzeichen|kind gold machen|abzeichen für die feuerwehr|schwimmpass/i,
     keywords: ["seepferdchen", "abzeichen", "bronze", "silber", "gold", "prüfung", "urkunde", "pass", "rettungsschwimmer", "dlrg", "polizei", "sportabzeichen", "schwimmabzeichen", "totenkopf", "freischwimmer", "abnahme", "prüfer", "sportprüfung", "einstellungstest", "feuerwehr"],
-    text: "Das Deutsche Schwimmabzeichen bildet die Grundlage unseres Trainings und wird selbstverständlich kostenfrei abgenommen. Auch Schwimmnachweise für Polizei, Feuerwehr, Rettungsdienst oder das klassische Sportabzeichen sind bei uns möglich.<br><br>Auf Wunsch bereiten wir Sie zudem auf das Rettungsschwimmabzeichen vor. Da es sich hierbei um eine Verbandszertifizierung handelt, erfolgt die Prüfung durch einen DLRG-Lehrscheininhaber. In Absprache mit der örtlichen DLRG organisieren wir diese Abnahme aber gerne ganz unkompliziert für Sie. Sprechen Sie uns einfach darauf an!"
+    text: "Das Deutsche Schwimmabzeichen bildet die Grundlage unseres Trainings und wird selbstverständlich kostenfrei abgenommen. Auch Schwimmnachweise für Polizei, Feuerwehr, Rettungsdienst oder das klassische Sportabzeichen sind bei uns möglich.<br><br>Auf Wunsch bereiten wir Sie zudem auf das Rettungsschwimmabzeichen vor. Da es sich hierbei um eine Verbandszertifizierung handelt, erfolgt die Prüfung durch einen DLRG-Lehrscheininhaber. In Absprache mit der örtlichen DLRG organisieren wir diese Abnahme aber gerne ganz unkompliziert für Sie."
   }, {
     title: "Alter & Zielgruppe",
     regex: /ab welchem alter|für welches alter|was für erwachsene|nehmen sie auch babys|was ist das mindestalter|bis zu welchem alter|unterrichten sie auch erwachsene|kurse für senioren|ab wie vielen jahren|zu jung/i,
@@ -127,17 +127,12 @@ const CATEGORIES = [{
     title: "Hausbesuche & Sondertermine",
     regex: /kommt ihr auch nach hause|hausbesuche|in unseren pool kommen|schulbegleitung|was kosten sondertermine|ins hotel|eigenen pool|termine zuhause|fahrtkosten/i,
     keywords: ["sondertermin", "hausbesuch", "pool", "privatpool", "zuhause", "hotel", "schule", "schulbegleitung", "extern", "auswärts", "anfahrt", "hotelpool", "eigenpool", "schulsport", "schulschwimmen", "sonderanfrage", "zonen", "fahrtkosten"],
-    text: "Wir bieten nach individueller Absprache auch Hausbesuche oder Sondertermine an. Hierfür berechnen wir je nach Entfernung eine gestaffelte Anfahrtspauschale ab 15 Euro. Nutzen Sie für Anfragen am besten direkt unser <a href='https://calendly.com/lp-swim/fragen-und-sondertermine' target='_blank' rel='noopener noreferrer'>Kontaktformular</a> für Sondertermine."
-  }, {
-    title: "Impressum & Hamburg",
-    regex: /warum hamburg|wieso steht da hamburg|wohnt ihr in hamburg|impressumsschutz|stimmt die anschrift|postanschrift in hamburg|aus hamburg|im impressum hamburg|andere adresse|briefkasten/i,
-    keywords: ["hamburg", "impressum", "postanschrift", "schutz", "adresse_hamburg", "briefkasten", "dienstleister", "rechtsform", "ladungsfähig", "impressumsschutz", "geschäftsadresse", "privatsphäre", "wohnadresse", "briefkastenfirma"],
-    text: "Die angegebene Adresse in Hamburg wird von einem externen Dienstleister gestellt und schützt die private Wohnadresse des Inhabers. Sie bildet eine ladungsfähige Anschrift im Sinne von § 5 DDG ab, von welcher jegliche Post direkt und vertraulich an uns weitergeleitet wird."
+    text: "Wir bieten nach individueller Absprache auch Hausbesuche oder Sondertermine an. Hierfür berechnen wir je nach Entfernung eine gestaffelte Anfahrtspauschale. Nutzen Sie für solche Anfragen gerne unser <a href='https://calendly.com/lp-swim/fragen-und-sondertermine' target='_blank' rel='noopener noreferrer'>Kontaktformular</a>."
   }, {
     title: "Fotos & Filmen",
     regex: /darf ich filmen|kann ich fotos|videos machen|fotografieren erlaubt|aufnehmen/i,
     keywords: ["filmen", "fotografieren", "fotos", "foto", "video", "videos", "kamera", "handy", "aufnehmen", "aufnahme", "bild", "bilder", "smartphone"],
-    text: "Aus Gründen des Datenschutzes und zum Schutz aller Badegäste ist das eigenmächtige Fotografieren und Filmen im gesamten Schwimmbad untersagt. Wir fokussieren uns ohnehin lieber voll und ganz auf das gemeinsame Erlebnis im Wasser!"
+    text: "Aus Gründen des Datenschutzes und zum Schutz aller Badegäste ist das eigenmächtige Fotografieren und Filmen im gesamten Schwimmbad untersagt."
   }, {
     title: "Bot Identität",
     regex: /wer bist du|bist du ein mensch|bist du ein bot|was machst du hier|wie kannst du helfen|bist du eine ki|mit wem spreche ich/i,
@@ -160,8 +155,10 @@ self.onmessage = e => {
     const eStr = r.toLowerCase().trim();
     const nArr = [...new Set(clean(eStr))];
     const norm = s => s.replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss");
+    
     const iList = CATEGORIES.map(cat => {
       let catScore = 0;
+      
       if (cat.regex && cat.regex.test(eStr)) {
         catScore += 25;
       }
