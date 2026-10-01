@@ -21,7 +21,7 @@ function clean(e) {
   return e.toLowerCase()
     .replace(/[^a-zäöüß0-9\s]/g, "")
     .split(/\s+/)
-    .filter((e => e.length > 2 && !STOP.has(e)))
+    .filter((e => e.length > 1 && !STOP.has(e)))
 }
 const CATEGORIES = [{
     title: "Warum Einzelunterricht",
@@ -145,49 +145,75 @@ const CATEGORIES = [{
     text: "Wir haben diesen digitalen Rettungsring entwickelt, um Ihnen schnelle Antworten auf häufige Fragen zu liefern. Das System arbeitet aus Datenschutzgründen komplett lokal in Ihrem Browser und speichert keine Ihrer Eingaben."
   }],
   FALLBACK_RESPONSES = ["Oje, da haben Sie mich eiskalt erwischt! 🥶 Leider ist Ihre Frage noch nicht in meiner Datenbank hinterlegt. Schreiben Sie uns Ihr Anliegen gerne direkt über unser <a href='https://calendly.com/lp-swim/fragen-und-sondertermine' target='_blank' rel='noopener noreferrer'>Kontaktformular</a> und wir melden uns persönlich bei Ihnen!", "Da muss ich leider passen! 🙈 Diese Frage ist in meinem System noch nicht hinterlegt. Nutzen Sie am besten unser <a href='https://calendly.com/lp-swim/fragen-und-sondertermine' target='_blank' rel='noopener noreferrer'>Kontaktformular</a> – wir melden uns schnellstmöglich bei Ihnen!"];
+
 self.onmessage = e => {
   const {
     type: n,
     payload: r
   } = e.data;
+  
   if ("INIT" === n) return self.postMessage({
     type: "READY"
   });
+  
   if ("CHAT" === n) try {
-    const e = r.toLowerCase()
-      .trim(),
-      n = clean(e),
-      norm = s => s.replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss"),
-      i = CATEGORIES.map((r => {
-        let i = 0;
-        return r.regex && r.regex.test(e) && (i += 15), n.forEach((e => {
-          r.keywords.forEach((n => {
-            const normE = norm(e);
-            const normN = norm(n);
-            if (normE === normN) i += 5;
-            else {
-              const r = Math.max(1, Math.floor(normN.length * 0.25));
-              Math.abs(normE.length - normN.length) <= r && lev(normE, normN) <= r && (i += 2)
+    const eStr = r.toLowerCase().trim();
+    const nArr = [...new Set(clean(eStr))];
+    const norm = s => s.replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss");
+    const iList = CATEGORIES.map(cat => {
+      let catScore = 0;
+      if (cat.regex && cat.regex.test(eStr)) {
+        catScore += 25;
+      }
+      
+      nArr.forEach(userWord => {
+        const normUser = norm(userWord);
+        let bestWordScore = 0;
+        
+        cat.keywords.forEach(kw => {
+          const normKw = norm(kw);
+          
+          if (normUser === normKw) {
+            bestWordScore = Math.max(bestWordScore, 10);
+          } else {
+            const threshold = normKw.length <= 3 ? 0 : Math.floor(normKw.length * 0.25);
+            
+            if (threshold > 0 && Math.abs(normUser.length - normKw.length) <= threshold) {
+              if (lev(normUser, normKw) <= threshold) {
+                bestWordScore = Math.max(bestWordScore, 3);
+              }
             }
-          }))
-        })), {
-          ...r,
-          score: i
-        }
-      }))
-      .filter((e => e.score > 0))
-      .sort(((e, n) => n.score - e.score));
+          }
+        });
+        
+        catScore += bestWordScore;
+      });
+      
+      return { ...cat, score: catScore };
+    }).filter(c => c.score > 0).sort((a, b) => b.score - a.score);
+
     let t = "";
-    t = 0 === i.length ? getRnd(FALLBACK_RESPONSES) : i[0].score < 3 && i.length > 1 ? "Ich bin mir nicht ganz sicher – meinten Sie vielleicht <b>" + i[0].title + "</b> oder <b>" + i[1].title + "</b>? Formulieren Sie Ihre Frage gerne etwas anders." : i[0].score < 3 ? getRnd(FALLBACK_RESPONSES) : 1 === i.length || i[0].score - i[1].score >= 3 ? i[0].text : "Wir sind uns nicht ganz sicher, auf welches Thema Sie hinausmöchten. Hier sind zwei passende Antworten für Sie:<br><br><b>Zum Thema " + i[0].title + "</b><br>" + i[0].text + "<br><br><b>Zum Thema " + i[1].title + "</b><br>" + i[1].text, setTimeout((() => {
-      self.postMessage({
-        type: "REPLY",
-        text: t
-      })
-    }), 1e3 + 1e3 * Math.random())
+    if (0 === iList.length) {
+      t = getRnd(FALLBACK_RESPONSES);
+    } else {
+      const topScore = iList[0].score;
+      
+      if (iList.length > 1 && (topScore - iList[1].score < 5)) {
+        if (topScore < 10) {
+           t = "Ich bin mir nicht ganz sicher – meinten Sie vielleicht <b>" + iList[0].title + "</b> oder <b>" + iList[1].title + "</b>? Formulieren Sie Ihre Frage gerne etwas anders.";
+        } else {
+           t = "Wir sind uns nicht ganz sicher, auf welches Thema Sie hinausmöchten. Hier sind zwei passende Antworten für Sie:<br><br><b>Zum Thema " + iList[0].title + "</b><br>" + iList[0].text + "<br><br><b>Zum Thema " + iList[1].title + "</b><br>" + iList[1].text;
+        }
+      } else {
+        t = iList[0].text;
+      }
+    }
+    
+    setTimeout(() => {
+      self.postMessage({ type: "REPLY", text: t });
+    }, 1000 + 1000 * Math.random());
+    
   } catch (e) {
-    self.postMessage({
-      type: "ERROR",
-      text: e.message
-    })
+    self.postMessage({ type: "ERROR", text: e.message });
   }
 };
