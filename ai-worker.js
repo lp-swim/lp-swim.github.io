@@ -157,14 +157,17 @@ self.onmessage = e => {
     const e = r.toLowerCase()
       .trim(),
       n = clean(e),
+      norm = s => s.replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss"),
       i = CATEGORIES.map((r => {
         let i = 0;
         return r.regex && r.regex.test(e) && (i += 15), n.forEach((e => {
           r.keywords.forEach((n => {
-            if (e === n) i += 5;
+            const normE = norm(e);
+            const normN = norm(n);
+            if (normE === normN) i += 5;
             else {
-              const r = Math.floor(n.length * 0.25);
-              r > 0 && Math.abs(e.length - n.length) <= r && lev(e, n) <= r && (i += 2)
+              const r = Math.max(1, Math.floor(normN.length * 0.25));
+              Math.abs(normE.length - normN.length) <= r && lev(normE, normN) <= r && (i += 2)
             }
           }))
         })), {
