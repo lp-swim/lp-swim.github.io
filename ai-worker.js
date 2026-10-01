@@ -209,7 +209,7 @@ self.onmessage = e => {
     
     setTimeout(() => {
       self.postMessage({ type: "REPLY", text: t });
-    }, 400 + 300 * Math.random());
+    }, 800 + 1000 * Math.random());
     
   } catch (e) {
     self.postMessage({ type: "ERROR", text: e.message });
