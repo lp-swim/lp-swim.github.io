@@ -163,6 +163,10 @@ self.onmessage = e => {
       if (cat.regex && cat.regex.test(eStr)) {
         catScore += 25;
       }
+
+      if (cat.title.toLowerCase() === eStr) {
+        catScore += 100;
+      }
       
       nArr.forEach(userWord => {
         const normUser = norm(userWord);
@@ -209,7 +213,7 @@ self.onmessage = e => {
     
     setTimeout(() => {
       self.postMessage({ type: "REPLY", text: t });
-    }, 800 + 1000 * Math.random());
+    }, 700 + 900 * Math.random());
     
   } catch (e) {
     self.postMessage({ type: "ERROR", text: e.message });
