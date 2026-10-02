@@ -151,11 +151,17 @@ self.onmessage = e => {
     type: "READY"
   });
   
-  if ("CHAT" === n) try {
+   if ("CHAT" === n) try {
     const eStr = r.toLowerCase().trim();
     const nArr = [...new Set(clean(eStr))];
     const norm = s => s.replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss");
-    const stem = w => w.replace(/(?:e|em|en|er|es|st|s)$/, "");
+    
+    const stem = w => {
+      if (w.length <= 4) return w;
+      return w.replace(/(e|em|en|er|es|st|s)$/, (match, p1, offset, string) => {
+        return (string.length - match.length) >= 3 ? "" : match;
+      });
+    };
     
     const iList = CATEGORIES.map(cat => {
       let catScore = 0;
