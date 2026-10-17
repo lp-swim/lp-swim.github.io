@@ -1,6 +1,6 @@
 "use strict";
 const getRnd = e => e[Math.floor(Math.random() * e.length)],
-  STOP = new Set(["das", "die", "der", "dem", "den", "ein", "eine", "einer", "eines", "ist", "sind", "wie", "wo", "was", "wer", "wann", "warum", "welche", "welcher", "welches", "mir", "dir", "uns", "sie", "ihnen", "ich", "du", "er", "es", "wir", "ihr", "euch", "euer", "eure", "unser", "unsere", "bitte", "mal", "schon", "halt", "doch", "auch", "noch", "und", "oder", "aber", "sich", "mich", "dass", "auf", "mit", "von", "bei", "für", "zu", "im", "in", "an", "um", "da", "so", "hier", "hallo", "hey", "hi", "moin", "guten", "tag", "danke", "dank", "vielen", "gute", "morgen", "abend", "servus", "grüß", "gott", "tschüss", "ciao", "ja", "nein", "ok", "okay", "gut", "super", "perfekt", "alles", "klar", "sehr", "gern", "gerne", "wird", "werden", "haben", "kann", "können", "darf", "dürfen", "muss", "müssen", "soll", "sollen", "gibt", "machen", "tun", "vom", "zum", "zur", "über", "am", "ähm", "ehm", "eigentlich", "bzw", "quasi", "schließlich", "irgendwie", "vielleicht"]),
+  STOP = new Set(["das", "die", "der", "dem", "den", "ein", "eine", "einer", "eines", "ist", "sind", "wie", "wo", "was", "wer", "wann", "warum", "welche", "welcher", "welches", "mir", "dir", "uns", "sie", "ihnen", "ich", "du", "er", "es", "wir", "ihr", "euch", "euer", "eure", "unser", "unsere", "mein", "meine", "meinem", "meinen", "meiner", "dein", "deine", "bitte", "mal", "schon", "halt", "doch", "auch", "noch", "und", "oder", "aber", "sich", "mich", "dass", "auf", "mit", "von", "bei", "für", "zu", "im", "in", "an", "um", "da", "so", "hier", "hallo", "hey", "hi", "moin", "guten", "tag", "danke", "dank", "vielen", "gute", "morgen", "abend", "servus", "grüß", "gott", "tschüss", "ciao", "ja", "nein", "ok", "okay", "gut", "super", "perfekt", "alles", "klar", "sehr", "gern", "gerne", "wird", "werden", "haben", "habt", "hat", "kann", "können", "könnt", "darf", "dürfen", "muss", "müssen", "soll", "sollen", "gibt", "machen", "tun", "vom", "zum", "zur", "über", "am", "ähm", "ehm", "eigentlich", "bzw", "quasi", "schließlich", "irgendwie", "vielleicht", "kind", "kinder", "kindern", "kurs", "kurse", "kursen", "schwimmen", "schwimmkurs", "schwimmkurse", "schwimmstunde", "schwimmstunden", "stunde", "training", "unterricht", "lernen", "braucht", "brauchen"]),
   lev = (e, n) => {
     if (!e.length) return n.length;
     if (!n.length) return e.length;
@@ -23,6 +23,7 @@ function clean(e) {
     .split(/\s+/)
     .filter((e => e.length > 1 && !STOP.has(e)))
 }
+
 const CATEGORIES = [{
     title: "Warum Einzelunterricht",
     regex: /warum lp swim|wieso einzelunterricht|warum ihr|was ist der vorteil|warum seid ihr besser|für wen ist das gedacht|was zeichnet euch aus|warum zu euch|warum einzelunterricht|warum privatunterricht|was ist das konzept|wieso keine gruppen|vorteile von|was ist euer konzept/i,
@@ -37,7 +38,7 @@ const CATEGORIES = [{
     title: "Erfahrungen & Qualität",
     regex: /bist du gut|seid ihr gut|könnt ihr was|taugt ihr was|wie gut seid ihr|lohnt sich das|wie sind die erfahrungen|gibt es bewertungen|wo finde ich erfahrungen|sind sie zu empfehlen|ist das training gut/i,
     keywords: ["erfolgreich", "seriös", "empfehlenswert", "referenzen", "bewertungen", "erfahrungen", "qualität", "professionell", "fähig", "kompetent", "vertrauenswürdig", "rezensionen", "kundenstimmen", "feedback", "meinungen", "testbericht", "auszeichnung"],
-    text: "Wir geben jeden Tag unser Bestes und freuen uns über Ihre schnellen Fortschritte. Werfen Sie gerne einen Blick auf unsere aktuellen <a href='https://www.google.com/search?sca_esv=4ef3de7c1dd16902&sxsrf=APpeQnt1oDQ-wyRPC5DGuNHChTb5u8_kuw:1789758401870&q=lp+swim&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_-HqBtgUH0vZnzbLQReQXxGdVZzlqJNzXxrY2ebUFcEzB6Td3gOypOa-cKxJxw-zydPrHT0%3D&uds=AJ5uw1-NJiCKB2vgbZj6OMiVQNpxzJoB4nFXmS8TcxlIU5_i7ORIFuGayCjOMv6gePBB_iU767sDC28JZxLPZcnFsDVlqNRI_FtGbqm8PTf5jMHVmzWXryM&sa=X&ved=2ahUKEwjqvpvO6fiWAxUpgP0HHQfPEOYQ3PALegQILhAF&biw=1920&bih=945&dpr=1' target='_blank' rel='noopener noreferrer'>Google Rezensionen</a> und überzeugen Sie sich selbst von unserer Arbeit."
+    text: "Wir geben jeden Tag unser Bestes und freuen uns über Ihre schnellen Fortschritte. Werfen Sie gerne einen Blick auf unsere aktuellen <a href='https://www.google.com/search?q=lp+swim&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_-HqBtgUH0vZnzbLQReQXxGdVZzlqJNzXxrY2ebUFcEzB6Td3gOypOa-cKxJxw-zydPrHT0%3D' target='_blank' rel='noopener noreferrer'>Google Rezensionen</a> und überzeugen Sie sich selbst von unserer Arbeit."
   }, {
     title: "Stornierung & Krankheit",
     regex: /termin verschieben|kann ich absagen|muss leider absagen|kind ist krank|termin ändern|wie storniere ich|termin umbuchen|ausfallen lassen|kann leider nicht|wir sind krank|können nicht kommen|terminabsage|verschieben wegen krankheit|nicht teilnehmen/i,
@@ -145,27 +146,27 @@ self.onmessage = e => {
   const {
     type: n,
     payload: r
-  } = e.data;
-  
+  } = e.data || {};
+
   if ("INIT" === n) return self.postMessage({
     type: "READY"
   });
-  
-   if ("CHAT" === n) try {
-    const eStr = r.toLowerCase().trim();
+
+  if ("CHAT" === n) try {
+    const eStr = ("string" == typeof r ? r : "").toLowerCase().trim();
     const nArr = [...new Set(clean(eStr))];
     const norm = s => s.replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss");
-    
+
     const stem = w => {
       if (w.length <= 4) return w;
       return w.replace(/(e|em|en|er|es|st|s)$/, (match, p1, offset, string) => {
         return (string.length - match.length) >= 3 ? "" : match;
       });
     };
-    
+
     const iList = CATEGORIES.map(cat => {
       let catScore = 0;
-      
+
       if (cat.regex && cat.regex.test(eStr)) {
         catScore += 25;
       }
@@ -173,23 +174,23 @@ self.onmessage = e => {
       if (cat.title.toLowerCase() === eStr) {
         catScore += 100;
       }
-      
+
       nArr.forEach(userWord => {
         const normUser = norm(userWord);
         const stemmedUser = stem(normUser);
         let bestWordScore = 0;
-        
+
         cat.keywords.forEach(kw => {
           const normKw = norm(kw);
           const stemmedKw = stem(normKw);
-          
+
           if (normUser === normKw || stemmedUser === stemmedKw) {
             bestWordScore = Math.max(bestWordScore, 10);
-          } else if ((normUser.length >= 5 && normKw.length >= 4 && normUser.includes(normKw)) || (normKw.length >= 5 && normUser.length >= 4 && normKw.includes(normUser))) {
+          } else if (normUser.length >= 5 && normKw.length >= 5 && (normUser.includes(normKw) || normKw.includes(normUser))) {
             bestWordScore = Math.max(bestWordScore, 7);
           } else {
             const threshold = normKw.length <= 3 ? 0 : Math.floor(normKw.length * 0.25);
-            
+
             if (threshold > 0 && Math.abs(normUser.length - normKw.length) <= threshold) {
               if (lev(normUser, normKw) <= threshold) {
                 bestWordScore = Math.max(bestWordScore, 3);
@@ -197,10 +198,10 @@ self.onmessage = e => {
             }
           }
         });
-        
+
         catScore += bestWordScore;
       });
-      
+
       return { ...cat, score: catScore };
     }).filter(c => c.score > 0).sort((a, b) => b.score - a.score);
 
@@ -209,18 +210,18 @@ self.onmessage = e => {
       t = getRnd(FALLBACK_RESPONSES);
     } else {
       const topScore = iList[0].score;
-      
+
       if (iList.length > 1 && (topScore - iList[1].score < 5)) {
         t = "Wir sind uns nicht ganz sicher. Welches dieser Themen passt besser?<br><br><div class='flex flex-wrap gap-2 mt-2'><button type='button' class='chat-suggestion px-4 py-2.5 bg-white border border-brand-300 text-brand-800 rounded-full text-xs font-semibold hover:bg-brand-50 active:scale-95 transition-all shadow-sm outline-none cursor-pointer'>" + iList[0].title + "</button><button type='button' class='chat-suggestion px-4 py-2.5 bg-white border border-brand-300 text-brand-800 rounded-full text-xs font-semibold hover:bg-brand-50 active:scale-95 transition-all shadow-sm outline-none cursor-pointer'>" + iList[1].title + "</button></div>";
       } else {
         t = iList[0].text;
       }
     }
-    
+
     setTimeout(() => {
       self.postMessage({ type: "REPLY", text: t });
     }, 700 + 900 * Math.random());
-    
+
   } catch (e) {
     self.postMessage({ type: "ERROR", text: e.message });
   }
