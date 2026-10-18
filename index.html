@@ -27,8 +27,8 @@
     <meta property="og:url" content="https://lp-swim.github.io/">
     <meta property="og:site_name" content="LP-SWIM">
     <meta property="og:locale" content="de_DE">
-    <meta property="og:image:width" content="1600">
-    <meta property="og:image:height" content="1200">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="800">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#fbfaf8">
     <meta name="mobile-web-app-capable" content="yes">
@@ -649,6 +649,7 @@
     </dialog>
     <dialog id="preisModal" aria-modal="true" aria-labelledby="preisTitle" class="bg-white rounded-[2rem] overflow-hidden shadow-2xl w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] sm:w-full sm:max-w-5xl h-[90vh] p-0 m-auto outline-none" hidden>
       <div class="flex flex-col h-[90vh] w-full relative">
+        <h2 id="preisTitle" class="sr-only">Preisübersicht</h2>
         <div class="absolute top-6 right-6 z-50 flex items-center gap-3"><a href="img/preisliste.pdf" download="LP-SWIM_Preisliste.pdf" class="hidden md:flex items-center justify-center px-5 py-2 bg-white/90 hover:bg-slate-50 backdrop-blur-md border border-slate-200/80 hover:border-slate-300 rounded-full shadow-sm transition-all outline-none" aria-label="Preisliste als PDF herunterladen"><svg aria-hidden="true" class="w-5 h-5 text-[#38bdf8]">
               <use href="#icon-download"></use>
             </svg></a><button type="button" data-close-modal="preisModal" class="p-1.5 text-slate-500 hover:text-slate-700 hover:bg-slate-200 rounded-md transition-colors outline-none" aria-label="Fenster schließen"><svg aria-hidden="true" class="w-5 h-5">
@@ -756,7 +757,7 @@
                     </svg> Datenschutzerklärung von Google <span class="sr-only"> (öffnet in neuem Tab)</span></a>
                   <div class="pt-4 border-t border-brand-200/50">
                     <p class="font-semibold text-slate-900 mb-1">Widerruf der Einwilligung</p>
-                    <p class="text-xs text-slate-600 mb-3">Ihre getroffene Auswahl wird lokal für 180 Tage (6 Monate) in Ihrem Browser gespeichert. Sie können Ihre Entscheidung zur Datenerfassung jedoch jederzeit vorab widerrufen. Die Website wird nach dem Klick neu geladen, um das Auswahlfenster erneut zu öffnen.</p><button type="button" data-revoke-cookies class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-brand-200 rounded-lg text-sm font-medium text-slate-900 hover:bg-slate-100 hover:shadow-sm transition-all outline-none"><svg aria-hidden="true" class="w-4 h-4 text-slate-900 shrink-0">
+                    <p class="text-xs text-slate-600 mb-3">Ihre getroffene Auswahl wird lokal für 180 Tage (6 Monate) in Ihrem Browser gespeichert. Sie können Ihre Entscheidung zur Datenerfassung jedoch jederzeit vorab widerrufen. Nach dem Klick öffnet sich das Auswahlfenster erneut, um Ihre Einstellung anzupassen.</p><button type="button" data-revoke-cookies class="inline-flex items-center gap-2 px-4 py-2 bg-white border border-brand-200 rounded-lg text-sm font-medium text-slate-900 hover:bg-slate-100 hover:shadow-sm transition-all outline-none"><svg aria-hidden="true" class="w-4 h-4 text-slate-900 shrink-0">
                         <use href="#icon-cookie"></use>
                       </svg> Einstellungen zurücksetzen </button>
                   </div>
@@ -992,7 +993,7 @@
           <section>
             <h3 class="font-semibold text-lg text-slate-900 mb-2">§ 4 Stornierung, Ausfallentschädigung & Pünktlichkeit</h3>
             <div class="space-y-3">
-              <div class="p-4 rounded-xl border flex items-start gap-3">
+              <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-start gap-3">
                 <div class="bg-white p-2 rounded-full text-slate-900 shadow-sm shrink-0" aria-hidden="true"><svg aria-hidden="true" class="w-5 h-5">
                     <use href="#icon-check"></use>
                   </svg></div>
@@ -1001,7 +1002,7 @@
                   <p>Vereinbarte Termine sind rechtlich bindend. Eine kostenfreie Stornierung oder Verschiebung ist ausschließlich bis spätestens <strong>48 Stunden vor dem vereinbarten Beginn</strong> möglich. Im Falle einer fristgerechten Stornierung erstatten wir Ihnen ein bereits gezahltes Honorar binnen 14 Tagen auf das ursprünglich genutzte Zahlungsmittel zurück – oder buchen es auf Wunsch unkompliziert als Guthaben auf einen neuen Ersatztermin um.</p>
                 </div>
               </div>
-              <div class="p-4 rounded-xl border flex items-start gap-3">
+              <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-start gap-3">
                 <div class="bg-white p-2 rounded-full text-slate-900 shadow-sm shrink-0" aria-hidden="true"><svg aria-hidden="true" class="w-5 h-5">
                     <use href="#icon-close"></use>
                   </svg></div>
