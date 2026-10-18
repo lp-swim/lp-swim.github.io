@@ -26,7 +26,7 @@ function clean(e) {
 
 const CATEGORIES = [{
     title: "Warum Einzelunterricht",
-    regex: /warum lp swim|wieso einzelunterricht|warum ihr|was ist der vorteil|warum seid ihr besser|für wen ist das gedacht|was zeichnet euch aus|warum zu euch|warum einzelunterricht|warum privatunterricht|was ist das konzept|wieso keine gruppen|vorteile von|was ist euer konzept/i,
+    regex: /warum lp swim|wieso einzelunterricht|warum ihr|was ist der vorteil|warum seid ihr besser|für wen ist das gedacht|was zeichnet euch aus|warum zu euch|warum einzelunterricht|warum privatunterricht|was ist das konzept|wieso keine gruppen|vorteile von|was ist euer konzept|1\s*zu\s*1|1:1/i,
     keywords: ["wieso", "weshalb", "vorteile", "vorteil", "einzelunterricht", "unterschied", "besonders", "philosophie", "einzelkurs", "privatkurs", "besser", "grund", "konzept", "mehrwert", "alleinstellungsmerkmal", "einzelbetreuung", "privatstunde", "privatunterricht", "einszueins", "1zu1", "methode"],
     text: "Während Gruppenkurse durch das soziale Miteinander punkten, bleibt dort oft zu wenig Zeit für den Einzelnen. Unser Konzept setzt genau hier an und rückt die persönliche Betreuung in den Fokus. Diese bedeutet naturgemäß eine höhere Investition, garantiert Ihnen im Gegenzug jedoch unsere uneingeschränkte Aufmerksamkeit. Das macht unser Training zur idealen Ergänzung zu regulären Kursen oder zum gezielten Feinschliff für sportliche Ziele. Völlig ohne Leistungsdruck bestimmen Sie Ihr eigenes Tempo – vom ersten Wasserkontakt bis zum nächsten Triathlon sind wir dabei!"
   }, {
@@ -47,7 +47,7 @@ const CATEGORIES = [{
   }, {
     title: "Treffpunkt & Standort",
     regex: /wo ist das|wo findet der kurs|wo treffen wir uns|welches schwimmbad|in welchem bad|wo genau ist der treffpunkt|wie komme ich dorthin|wo ist der kurs|wo müssen wir hin|wo ist der eingang|treffen wir uns|wo genau in viernheim/i,
-    keywords: ["treffpunkt", "standort", "ort", "schwimmbad", "hallenbad", "freibad", "waldschwimmbad", "adresse", "viernheim", "badeaufsicht", "stattfinden", "findet", "statt", "navi", "location", "wohin", "anfahrt", "eingang", "kasse", "parkplatz", "parken", "treffen"],
+    keywords: ["treffpunkt", "standort", "ort", "bad", "bäder", "schwimmbad", "hallenbad", "freibad", "waldschwimmbad", "adresse", "viernheim", "badeaufsicht", "stattfinden", "findet", "statt", "navi", "location", "wohin", "anfahrt", "eingang", "kasse", "parkplatz", "parken", "treffen"],
     text: "Wir trainieren je nach Saison im Waldschwimmbad oder im Hallenbad in Viernheim. Treffpunkt für unsere gemeinsamen Stunden ist immer direkt bei der Badeaufsicht. Das Eintrittsgeld für das Bad ist vor Ort zu entrichten."
   }, {
     title: "Kursauswahl & Buchung",
@@ -61,8 +61,8 @@ const CATEGORIES = [{
     text: "Alle Tarife finden Sie in unserer aktuellen <button type='button' data-open-modal='preisModal' class='text-[#38bdf8] font-semibold hover:underline outline-none'>Preisübersicht</button>. Sie zahlen bequem bei der Buchung via PayPal, Kreditkarte oder SEPA. Sollte es über die genannten Möglichkeiten nicht gehen, schreiben Sie uns kurz über unser <a href='https://calendly.com/lp-swim/fragen-und-sondertermine' target='_blank' rel='noopener noreferrer' class='text-[#38bdf8] font-semibold hover:underline outline-none'>Kontaktformular</a> und wir stellen Ihnen eine manuelle Rechnung zur klassischen Banküberweisung aus. Der Badeintritt wird separat vor Ort bezahlt."
   }, {
     title: "Dauer & Verspätung",
-    regex: /wie lange dauert|wie lang ist eine stunde|wie viele minuten|wie lange geht das|was passiert bei verspätung|wie lang trainieren wir|wie lange sind wir im wasser|wann müssen wir da sein|zu spät kommen/i,
-    keywords: ["dauer", "lang", "lange", "minuten", "zeitraum", "zeitfenster", "60min", "trainingszeit", "pünktlich", "verspätung", "zeiten", "stundendauer", "einheit", "trainingsdauer", "zuspät"],
+    regex: /wie lange dauert|wie lang ist eine stunde|wie viele minuten|wie lange geht das|was passiert bei verspätung|wie lang trainieren wir|wie lange sind wir im wasser|wann müssen wir da sein|zu spät kommen|60\s*min/i,
+    keywords: ["dauer", "lang", "lange", "minuten", "zeitraum", "zeitfenster", "60", "60min", "trainingszeit", "pünktlich", "verspätung", "zeiten", "stundendauer", "einheit", "trainingsdauer", "zuspät"],
     text: "Wir planen für jede Trainingseinheit exakt 60 Minuten ein. Wir treffen uns bereits umgezogen und abgeduscht direkt bei der Badeaufsicht. Etwaige Verspätungen gehen leider zulasten Ihrer eigenen Trainingszeit."
   }, {
     title: "Zuschauen & Begleitpersonen",
