@@ -1,6 +1,6 @@
 "use strict";
 const getRnd = e => e[Math.floor(Math.random() * e.length)],
-  STOP = new Set(["das", "die", "der", "dem", "den", "ein", "eine", "einer", "eines", "ist", "sind", "wie", "wo", "was", "wer", "wann", "warum", "welche", "welcher", "welches", "mir", "dir", "uns", "sie", "ihnen", "ich", "du", "er", "es", "wir", "ihr", "euch", "euer", "eure", "unser", "unsere", "mein", "meine", "meinem", "meinen", "meiner", "dein", "deine", "bitte", "mal", "schon", "halt", "doch", "auch", "noch", "und", "oder", "aber", "sich", "mich", "dass", "auf", "mit", "von", "bei", "für", "zu", "im", "in", "an", "um", "da", "so", "hier", "hallo", "hey", "hi", "moin", "guten", "tag", "danke", "dank", "vielen", "gute", "morgen", "abend", "servus", "grüß", "gott", "tschüss", "ciao", "ja", "nein", "ok", "okay", "gut", "super", "perfekt", "alles", "klar", "sehr", "gern", "gerne", "wird", "werden", "haben", "habt", "hat", "kann", "können", "könnt", "darf", "dürfen", "muss", "müssen", "soll", "sollen", "gibt", "machen", "tun", "vom", "zum", "zur", "über", "am", "ähm", "ehm", "eigentlich", "bzw", "quasi", "schließlich", "irgendwie", "vielleicht", "kind", "kinder", "kindern", "kurs", "kurse", "kursen", "schwimmen", "schwimmkurs", "schwimmkurse", "schwimmstunde", "schwimmstunden", "stunde", "training", "unterricht", "lernen", "braucht", "brauchen"]),
+  STOP = new Set(["das", "die", "der", "dem", "den", "ein", "eine", "einer", "eines", "ist", "sind", "wie", "wo", "was", "wer", "wann", "warum", "welche", "welcher", "welches", "mir", "dir", "uns", "sie", "ihnen", "ich", "du", "er", "es", "wir", "ihr", "euch", "euer", "eure", "unser", "unsere", "mein", "meine", "meinem", "meinen", "meiner", "dein", "deine", "bitte", "mal", "schon", "halt", "doch", "auch", "noch", "und", "oder", "aber", "sich", "mich", "dass", "auf", "mit", "von", "bei", "für", "zu", "im", "in", "an", "um", "da", "so", "hier", "hallo", "hey", "hi", "moin", "guten", "tag", "danke", "dank", "vielen", "gute", "morgen", "abend", "servus", "grüß", "gott", "tschüss", "ciao", "ja", "nein", "ok", "okay", "gut", "super", "perfekt", "alles", "klar", "sehr", "gern", "gerne", "wird", "werden", "haben", "habt", "hat", "kann", "können", "könnt", "darf", "dürfen", "muss", "müssen", "soll", "sollen", "gibt", "machen", "tun", "vom", "zum", "zur", "über", "am", "ähm", "ehm", "eigentlich", "bzw", "quasi", "schließlich", "irgendwie", "vielleicht", "kind", "kinder", "kindern", "kurs", "kurse", "kursen", "schwimmen", "schwimmkurs", "schwimmkurse", "schwimmstunde", "schwimmstunden", "stunde", "stunden", "training", "unterricht", "lernen", "braucht", "brauchen", "findet", "finden", "statt", "stattfinden"]),
   lev = (e, n) => {
     if (!e.length) return n.length;
     if (!n.length) return e.length;
@@ -47,7 +47,7 @@ const CATEGORIES = [{
   }, {
     title: "Treffpunkt & Standort",
     regex: /wo ist das|wo findet der kurs|wo treffen wir uns|welches schwimmbad|in welchem bad|wo genau ist der treffpunkt|wie komme ich dorthin|wo ist der kurs|wo müssen wir hin|wo ist der eingang|treffen wir uns|wo genau in viernheim/i,
-    keywords: ["treffpunkt", "standort", "ort", "bad", "bäder", "schwimmbad", "hallenbad", "freibad", "waldschwimmbad", "adresse", "viernheim", "badeaufsicht", "stattfinden", "findet", "statt", "navi", "location", "wohin", "anfahrt", "eingang", "kasse", "parkplatz", "parken", "treffen"],
+    keywords: ["treffpunkt", "standort", "ort", "bad", "bäder", "schwimmbad", "hallenbad", "freibad", "waldschwimmbad", "adresse", "viernheim", "badeaufsicht", "navi", "location", "wohin", "anfahrt", "eingang", "kasse", "parkplatz", "parken", "treffen"],
     text: "Wir trainieren je nach Saison im Waldschwimmbad oder im Hallenbad in Viernheim. Treffpunkt für unsere gemeinsamen Stunden ist immer direkt bei der Badeaufsicht. Das Eintrittsgeld für das Bad ist vor Ort zu entrichten."
   }, {
     title: "Kursauswahl & Buchung",
@@ -96,8 +96,8 @@ const CATEGORIES = [{
     text: "Wir gehen im Einzelunterricht sehr behutsam auf Wasserangst oder besondere Förderbedarfe ein. Bitte teilen Sie uns gesundheitliche Besonderheiten oder Einschränkungen unbedingt direkt bei der Buchung mit. So können wir das Training optimal und sicher vorbereiten."
   }, {
     title: "Verfügbarkeit & Warteliste",
-    regex: /alles ist ausgebucht|wann gibt es neue termine|steht man auf der warteliste|wann werden plätze frei|wie buche ich folgetermine|ab wann kann man buchen|ich finde keinen termin|gibt es eine warteliste|wann schaltet ihr neue|nächsten monat buchen|sind noch plätze frei/i,
-    keywords: ["ausgebucht", "voll", "termine", "termin", "freigeschaltet", "warteliste", "folgetermine", "kalender", "zeiten", "plätze", "kapazität", "belegt", "monat", "folgemonat", "buchungsportal", "auslastung", "reservierungsstart", "buchungsstart"],
+    regex: /alles ist ausgebucht|wann gibt es neue termine|steht man auf der warteliste|wann werden plätze frei|wie buche ich folgetermine|ab wann kann man buchen|ich finde keinen termin|gibt es eine warteliste|wann schaltet ihr neue|nächsten monat buchen|sind noch (plätze|termine|stunden) frei/i,
+    keywords: ["ausgebucht", "voll", "frei", "freie", "termine", "termin", "freigeschaltet", "warteliste", "folgetermine", "kalender", "zeiten", "plätze", "kapazität", "belegt", "monat", "folgemonat", "buchungsportal", "auslastung", "reservierungsstart", "buchungsstart"],
     text: "Wir schalten neue Termine für den Folgemonat immer Mitte bis Ende eines jeden Monats in unserem Buchungsportal frei. Schauen Sie am besten in diesem Zeitraum wieder rein, falls aktuell alles belegt sein sollte."
   }, {
     title: "Das Team & Qualifikation",
@@ -122,7 +122,7 @@ const CATEGORIES = [{
   }, {
     title: "Lerngeschwindigkeit",
     regex: /wie viele stunden braucht man|wann kann er schwimmen|wie lange dauert es bis|wie schnell geht das|gibt es eine garantie|wie viele wochen|wie oft müssen wir kommen|nach wie vielen stunden|garantieren sie/i,
-    keywords: ["stunden", "lerngeschwindigkeit", "schnell", "fortschritt", "anzahl", "garantie", "wochen", "monate", "zeitaufwand", "lernerfolg", "kursdauer", "schnelligkeit", "stundenanzahl", "einheiten", "dauerhaftigkeit"],
+    keywords: ["lerngeschwindigkeit", "schnell", "fortschritt", "anzahl", "garantie", "wochen", "monate", "zeitaufwand", "lernerfolg", "kursdauer", "schnelligkeit", "stundenanzahl", "einheiten", "dauerhaftigkeit"],
     text: "Wir richten uns beim Lerntempo komplett nach Ihnen. Da wir im Einzelunterricht ohne Ablenkung trainieren, erzielen wir erfahrungsgemäß sehr zügige und nachhaltige Fortschritte."
   }, {
     title: "Hausbesuche & Sondertermine",
